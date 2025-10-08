@@ -46,10 +46,9 @@ namespace Grocery.App.ViewModels
             {
                 // Show products that are NOT already in this category, have stock, and match search
                 bool isAlreadyInCategory = ProductCategories.Any(pc => pc.ProductId == p.Id);
-                bool hasStock = p.Stock > 0;
                 bool matchesSearch = string.IsNullOrEmpty(searchText) || p.Name.ToLower().Contains(searchText.ToLower());
 
-                if (!isAlreadyInCategory && hasStock && matchesSearch)
+                if (!isAlreadyInCategory && matchesSearch)
                 {
                     AvailableProducts.Add(p);
                 }
@@ -84,20 +83,6 @@ namespace Grocery.App.ViewModels
             }
         }
 
-        [RelayCommand]
-        public void RemoveProductFromCategory(ProductCategory productCategory)
-        {
-            if (productCategory == null) return;
-
-            try
-            {
-                _productCategoryService.Delete(productCategory);
-                Load(Category.Id);
-            }
-            catch (Exception ex)
-            {
-            }
-        }
 
         [RelayCommand]
         public void PerformSearch(string searchText)

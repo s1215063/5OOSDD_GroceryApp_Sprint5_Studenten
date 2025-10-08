@@ -12,11 +12,10 @@ namespace Grocery.Core.Data.Repositories
 
             productCategories = new List<ProductCategory>
             {
-                new ProductCategory(1, "", 1, 3),
-                new ProductCategory(2, "", 2, 3),
-                new ProductCategory(3, "", 3, 4),
-                new ProductCategory(4, "", 4, 5),
-                new ProductCategory(5, "", 4, 3)
+                new ProductCategory(1, "", 1, 3), //Dairy Melk
+                new ProductCategory(2, "", 2, 3), //Dairy Kaas
+                new ProductCategory(3, "", 3, 4), //Baked goods Brood
+                new ProductCategory(4, "", 4, 5), //Breakfast Cornflakes
             };
         }
 
