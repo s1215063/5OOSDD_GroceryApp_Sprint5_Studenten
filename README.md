@@ -1,57 +1,47 @@
-#GroceryApp sprint5 Studentversie  
-Dit is de startversie voor studenten voor sprint 5.  
+# GroceryApp sprint5
+
+Gitflow Workflow
+
+Voor dit project word er gebruik gemaakt van de Gitflow methode om de ontwikkeling gestructureerd en overzichtelijk te houden.
+
+Binnen Gitflow worden de volgende branches gebruikt:
+
+
+## main
+Bevat de stabiele, productierijpe code. Alles in deze branch is getest en klaar om in productie te gebruiken.
+
+
+## develop
+De integratiebranch waarin alle nieuwe features samengevoegd worden. Hier staat altijd de laatste werkende ontwikkelversie.
+
+
+## feature/…
+Voor iedere nieuwe user case of functionaliteit wordt een aparte feature branch aangemaakt.
+
+- feature/UC8 → voor de uitwerking van Use Case 8.
+- feature/UC9 → voor de uitwerking van Use Case 9.
+
+
+Zodra een feature klaar is, wordt deze terug samengevoegd in de develop branch.
+
+
+## release/…
+Wanneer een nieuwe versie bijna klaar is, wordt er een release branch aangemaakt vanuit develop. Hierin worden enkel nog documentatie-updates gedaan, zodat de release stabiel wordt.
+
+
+## hotfix/…
+ Voor dringende fouten in de main branch die snel opgelost moeten worden, zonder te wachten op een nieuwe release.
+
+
+
+
+## UC's
+UC12 Productcategoriën toevoegen
+- Producten kunnen getoond worden op basis van categorie
+- Producten kunnen toegevoegd worden aan een categorie doormiddel van zoekfunctie
+
+UC14 Toevoegen prijzen
+- Producten bevatten nu een verkoop prijs
  
-UC15 Toevoegen THT datum aan product is compleet.  
-
-UC14 Toevoegen prijzen:  
-- Prijs toevoegen aan product class en uitbreiden constructor chain.  
-- ProductRepository --> prijsveld vullen met waarden.  
-- ProductView uitbreiden met kolom voor de prijs (header en inhoud van de tabel).      
-
-UC12 Productcategoriën toevoegen --> zelfstandig uitwerken:  
-Ontwerp:
->```mermaid
->classDiagram
->direction LR
->    class Product {
->	    +int Id
->	    +string Name
->	    +int Stock
->	    +DateOnly ShelfLife
->	    +Decimal Price
->   }
->    class ProductCategory {
->	    +int Id
->	    +string Name
->	    +int ProductId
->	    +int CategoryId
->    }
->    class Category {
->	    +int Id
->	    +string Name
->    }
->
->    Product "1" -- "*" ProductCategory
->    ProductCategory "*" -- "1" Category
-> ```
-Stappenplan:  
-- Maak class Category  
-- Maak class ProductCategory  
-- Maak Interface en Repository voor Category  
-- Maak Interface en Repository voor ProductCategory  
-- Maak Interface en Service voor Category  
-- Maak Interface en Service voor ProductCategory  
-- Registreer de gemaakte Repo's en services in MauiProgramm  
-- Maak CategoriesViewModel.  
-- Maak CategoriesView.  
-- Registreer De view en het ViewModel in MauiProgramm.  
-- Maak een menu entry in de tabbar in AppShell.xaml en registreer route in AppShell.xaml.cs  
-- Maak ProductCategoriesViewModel.  
-- Maak ProductCategoriesView.  
-- Registreer De view en het ViewModel in MauiProgramm.  
-- Zorg dat de ProductCategoriesView gestart kan worden na het klikken op een Category in CategoriesView  
-- Registreer route naar ProductCategoriesView in AppShell.xaml.cs  
-
-
-
-
+UC15 Toevoegen THT datum aan product 
+- Producten bevatten nu een THT datum
